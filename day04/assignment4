@@ -1,1 +1,63 @@
+import random
 
+def user_input(prompt):
+    """Input from the user"""
+    return input(prompt).strip().lower()
+
+def comp_num():
+    """Whole number between 1 and 20"""
+    return random.randint(1, 20)
+
+def game():
+    """number guessing game"""
+    hid_num = comp_num()
+    trial = 0
+    print("Enter 'x' to exit, 'n' to start a new game, or 's' to show the hidden number.")
+
+    while True:
+        guess = user_input("Your guess: ")
+        
+        # commands
+        if guess == "x":
+            print("Exit. See you again!")
+            return False 
+        elif guess == "n":
+            print("Leaving the current game.")
+            return True  # new game
+        elif guess == "s":
+            print(f"Cheat mode: The hidden number is {hid_num}.")
+            continue
+
+        # Validate the guess
+        if not guess.isdigit():
+            print("not valid")
+            continue
+        
+        guess = int(guess)
+        trial += 1
+        
+        # Comparsion of input guess with hidden number
+        if guess < hid_num:
+            print("Too small!")
+        elif guess > hid_num:
+            print("Too big!")
+        else:
+            print(f"Congratulations! correct guess in {trial} attempts.")
+            return True  # new game
+
+def main():
+ 
+    print("Number Guessing Game!")
+    
+    while True:
+        new_game = game()
+        if game is False:  
+            break
+        else:
+            play_again = user_input("\n Do you want to play another game? (y/n): ")
+            if play_again != "y":
+                print("Goodbye!")
+                break
+
+if __name__ == "__main__":
+    main()
