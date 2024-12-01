@@ -50,8 +50,8 @@ def main():
     print("Number Guessing Game!")
     
     while True:
-        game = game()
-        if game is False:  
+        new_game = game()
+        if new_game is False:  
             break
         else:
             play_again = user_input("\n Do you want to play another game? (y/n): ")
