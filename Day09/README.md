@@ -7,7 +7,16 @@ Requirement :
 python analyze.py FILE --duplicate --blabla
 
 *  FILE represents Path to the sequence file
-*  --duplicate finds the longest repeat sequence (optional for the user)
-*  --gc_content calculates the GC content (optional for the user)
+*  " --duplicate " finds the longest repeat sequence (optional for the user)
+*  " --gc_content " calculates the GC content (optional for the user)
 
 Note - User can run one or both analyses at the same time by using the flags described above.
+Example:
+
+python analyze.py my_sequence.fasta --duplicate This will print the longest repeat sequence and its length for the sequence in my_sequence.fasta.
+
+Requirements:
+
+This program requires the Biopython library. You can install it using pip:
+
+pip install biopython
