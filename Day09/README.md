@@ -10,7 +10,7 @@ python analyze.py FILE --duplicate --blabla
 *  " --duplicate " finds the longest repeat sequence (optional for the user)
 *  " --gc_content " calculates the GC content (optional for the user)
 
-Note - User can run one or both analyses at the same time by using the flags described above.
+Note - User can run one or both analyzis at the same time by using the flags described above.
 Example:
 
 python analyze.py my_sequence.fasta --duplicate This will print the longest repeat sequence and its length for the sequence in my_sequence.fasta.
