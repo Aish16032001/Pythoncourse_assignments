@@ -4,7 +4,7 @@ Identifying the longest sub-sequence that occurs at least twice within the seque
 
 Requirement :
 
-python analyze.py FILE --duplicate --blabla
+python analyze.py FILE --duplicate --gc_content
 
 *  FILE represents Path to the sequence file
 *  " --duplicate " finds the longest repeat sequence (optional for the user)
