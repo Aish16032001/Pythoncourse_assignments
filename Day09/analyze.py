@@ -6,12 +6,30 @@ def read_file(file_path):
     with open(file_path, 'r') as file:
         return file.read().strip()
 
-def find_longest_sequence(dna_sequence):
-    valid_bases = re.findall(r'[ATCG]+', dna_sequence)  # continuous valid subsequences of A, T, C, G
-    if valid_bases:
-        longest = max(valid_bases, key=len)  
-        return longest
-    return ""
+def longest_seq(sequence):
+    def check_duplicate(length):
+        """find a duplicate substring of a given length."""
+        seen = set()
+        for i in range(len(sequence) - length + 1):
+            substring = sequence[i:i + length]
+            if substring in seen:
+                return substring
+            seen.add(substring)
+        return None
+
+    start, end = 1, len(sequence) - 1
+    longest = ""
+
+    while start <= end:
+        mid = (start + end) // 2
+        duplicate = check_duplicate(mid)
+        if duplicate:
+            longest = duplicate  
+            start = mid + 1  
+        else:
+            end = mid - 1  
+
+    return longest
 
 def calculate_gc_content(dna_sequence):
     """GC content of the DNA sequence."""
@@ -25,9 +43,9 @@ def run_analysis(file_path, find_longest, calculate_gc):
     dna_sequence = read_file(file_path)
     
     if find_longest:
-        longest_seq = find_longest_sequence(dna_sequence)
-        if longest_seq:
-            print(f"The longest continuous valid sequence is: {longest_seq}")
+        longest_sequence = longest_seq(dna_sequence)
+        if longest_sequence:
+            print(f"The longest continuous valid sequence is: {longest_sequence}")
         else:
             print("No valid sequence found.")
     
