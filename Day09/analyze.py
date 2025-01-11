@@ -2,13 +2,11 @@ import argparse
 import re
 
 def read_file(file_path):
-    """ content of the DNA sequence file"""
     with open(file_path, 'r') as file:
         return file.read().strip()
 
 def longest_seq(sequence):
     def check_duplicate(length):
-        """find a duplicate substring of a given length."""
         seen = set()
         for i in range(len(sequence) - length + 1):
             substring = sequence[i:i + length]
@@ -32,7 +30,6 @@ def longest_seq(sequence):
     return longest
 
 def calculate_gc_content(dna_sequence):
-    """GC content of the DNA sequence."""
     valid_sequence = dna_sequence.upper()  
     g_count = valid_sequence.count('G')
     c_count = valid_sequence.count('C')
