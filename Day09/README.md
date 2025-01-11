@@ -4,11 +4,11 @@ Identifying the longest sub-sequence that occurs at least twice within the seque
 
 Requirement :
 
-python analyze.py FILE --duplicate --blabla
+python analyze.py FILE --longest --gc
 
 *  FILE represents Path to the sequence file
-*  " --duplicate " finds the longest repeat sequence (optional for the user)
-*  " --blabla " calculates the GC content (optional for the user)
+*  " --longest " finds the longest repeat sequence (optional for the user)
+*  " --gc " calculates the GC content (optional for the user)
 
 Note - User can run one or both analyzis at the same time by using the flags described above.
 
